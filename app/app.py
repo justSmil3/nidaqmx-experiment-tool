@@ -1,7 +1,6 @@
 from pandas.core.generic import sample
 from nidaqmx_utils import ( 
     get_device, 
-    close_task, 
     cleanup, 
     create_task, 
     construct_wave, 
@@ -85,6 +84,8 @@ if st.button("Start"):
     st.success("started")
     send_charge(config_dict, waveform, duration, int(sample_rate))
     time.sleep(duration + 0.05)
+    _ = cleanup(config_dict)
+
     st.success("done")
 
 
