@@ -22,7 +22,7 @@ to acticate said environment do the following:
 ### Mac
 `source venv/bin/activate`
 
-to deactivate it run `deacticate`
+to deactivate it run `deactivate`
 
 ## Step 3: 
 Install needed dependencies
