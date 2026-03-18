@@ -91,6 +91,7 @@ def create_task(
         max_val = stim_amplitude 
     )
     config["task"] = task
+    return config
 
 @singledispatch
 def construct_wave(
@@ -129,7 +130,6 @@ def _(
     counter_ratio: float = 0.2,
     **kwargs
 ):
-    print("test")
     period = 1.0 / freq
     working_time = mode.main_width + mode.break_time + mode.counter_width
     if working_time > period:

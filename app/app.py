@@ -65,8 +65,19 @@ selected_schema = SCHEMAS[selected_name]
 config = render_class_inputs(selected_name, selected_schema)
 
 waveform = construct_wave(config, freq, sample_rate, duration, stim_amplitude, counter_ratio)
-print(selected_schema)
-show_wave(waveform)
+
+st.subheader(f"Preview")
+wcol1, wcol2 = st.columns(2)
+
+st.session_state["prev_wave"] = waveform[:int(1.0/freq*sample_rate)]
+
+if wcol1.button("Show Full Signal"):
+    st.session_state.update({"prev_wave": waveform})
+
+if wcol2.button("Show One Cycle"):
+    st.session_state.update({"prev_wave": waveform[:int(1.0/freq*sample_rate)]})
+
+show_wave(st.session_state["prev_wave"])
 
 if st.button("Start"):
     config_dict = get_device(device_name=device_name, channel=channel)
