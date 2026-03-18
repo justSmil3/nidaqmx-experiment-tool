@@ -2,6 +2,8 @@
 # INFORMATION
 this is a work in progress project, all content is subject to change 
 
+The current version still is a bit laggy performance wise
+
 # INSTALlATION
 
 ## Step 1: 
