@@ -86,7 +86,7 @@ def create_task(
 ):
     task = nidaqmx.Task() 
     channel = config.get("channel")
-    task.ao_channels.add_ao_current_chan(
+    task.ao_channels.add_ao_voltage_chan(
         channel,
         min_val = -stim_amplitude * counter_ratio,
         max_val = stim_amplitude 
