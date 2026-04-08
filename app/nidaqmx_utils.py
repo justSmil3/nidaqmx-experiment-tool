@@ -34,7 +34,8 @@ def get_device(device_name: str | None = None, channel: str = 'ao0'):
             "channel": f"{device_name}/{channel}",
             "device": Device(device_name),
         }
-        info(json.dumps(config))
+        # info(json.dumps(config))
+        # TOFIX Device is not serializable as json
         return config
     except Exception as e:
         error(f"Error setting up device configuration: {e}")
