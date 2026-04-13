@@ -14,6 +14,7 @@ def init_dataclass_state(prefix: str, cls: type[Any]) -> None:
 def render_class_inputs(prefix: str, cls: type[Any]) -> Any:
     init_dataclass_state(prefix, cls)
 
+
     values = {}
     for f in fields(cls):
         key = f"{prefix}_{f.name}"
@@ -34,7 +35,7 @@ def render_class_inputs(prefix: str, cls: type[Any]) -> Any:
 
 def show_wave(y: np.ndarray) -> None:
     df = pd.DataFrame({
-        "sample": np.arange(len(y)),
-        "amplitude": y,
+        "ms": np.arange(len(y)),
+        "mV": y * 1000,
     })
-    st.line_chart(df, x="sample", y="amplitude")
+    st.line_chart(df, x="ms", y="mV")

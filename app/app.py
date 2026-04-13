@@ -76,7 +76,7 @@ if wcol1.button("Show Full Signal"):
 if wcol2.button("Show One Cycle"):
     st.session_state.update({"prev_wave": waveform[:int(1.0/freq*sample_rate)]})
 
-show_wave(st.session_state["prev_wave"])
+show_wave(st.session_state["prev_wave"][::int(1/(1000/sample_rate))])
 
 if st.button("Start"):
     config_dict = get_device(device_name=device_name, channel=channel)
