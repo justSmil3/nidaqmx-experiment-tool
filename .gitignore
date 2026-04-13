@@ -63,6 +63,7 @@ worktrees
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+log/
 
 # Yarn files
 **/.yarn/*
@@ -137,3 +138,6 @@ e2e_playwright/__snapshots__/*
 ########################################################################
 protoc-*-linux-x86_64.zip
 python_cache_key.md5venv
+
+# todo list from dooing.nvim
+dooing.json

@@ -167,3 +167,10 @@ def send_charge(
         samps_per_chan=int(duration * sample_rate)
     )
     task.write(waveform, auto_start=True)
+
+def get_v_at_t(
+    waveform: np.ndarray,
+    t: float,
+    total_duration: float
+):
+    return waveform[int((t / total_duration) * waveform.size)]
